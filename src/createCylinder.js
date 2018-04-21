@@ -6,6 +6,7 @@ import { CylinderBufferGeometry, MeshBasicMaterial, Mesh } from 'three';
  *  color: number,
  * }
  * @param {option} Option 
+ * @return {THREE.Object3D}
  */
 export default function (
     {
