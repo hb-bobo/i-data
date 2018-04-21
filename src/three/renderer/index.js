@@ -3,7 +3,6 @@ import { WebGLRenderer } from 'three'
 import scene from '../scene';
 import camera from '../camera';
 import { update } from 'es6-tween'
-// import OrbitControls from 'three-orbitcontrols';
 
 //动画队列
 var animateRunList = [];
@@ -12,16 +11,14 @@ var renderer = new WebGLRenderer({
     antialias: true, // 抗锯齿
     alpha: true, // 透明
     powerPreference: 'high-performance', // 高性能模式
+    shadowMap: {
+        enabled: true,
+    },
+
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0xCCCCCC, 1.0);
-renderer.shadowMap.enabled = true;
 
-// var controls = new OrbitControls(camera, renderer.domElement);
-// controls.addEventListener('change', function (ev) {
-//     console.log(ev)
-//     return;
-// })
 
 /**
  * 渲染一帧
@@ -44,7 +41,7 @@ function animate() {
 }
 animate();
 // 添加在animate中要执行的操作队列
-animateRunList.push(update);
+// animateRunList.push(update);
 animateRunList.push(function() {
     renderer.render( scene, camera );
 });

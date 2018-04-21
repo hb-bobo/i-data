@@ -20,9 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "es6-tween": "^5.1.0",
-    "lodash.random": "^3.2.0",
-    "three": "^0.91.0",
-    "three-orbitcontrols": "^2.0.0"
+    "three": "^0.91.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

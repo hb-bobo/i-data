@@ -1,22 +1,21 @@
-import { ObjectLoader } from 'three';
+import { SphereBufferGeometry, MeshBasicMaterial, Mesh, Group } from 'three';
 
-let jumper = null;
 
 /**
- * @return {PromiseLike}
+ * @interface Option {
+ *  color: number,
+ * }
+ * @param {option} Option 
  */
-const createJumper = function () {
-    return new Promise(function (resolve) {
-        if (jumper !== null) {
-            resolve(jumper);
-            return;
-        }
-        import('ROOT/model/jumper.json').then(function (res) {
-            jumper = ObjectLoader.prototype.parse(res);
-            jumper.castShadow = true;
-             
-            resolve(jumper);
-        });
-    })
+export default function (
+    {
+        color = 0xFFFFFF
+    } = {}
+) {
+    const group = new Group();
+    const geometry = new SphereBufferGeometry(5, 5, 20, 32);
+    const material = new MeshBasicMaterial({ color: color });
+    const sphere = new Mesh(geometry, material);
+    group.add(sphere);
+    return cylinder;
 }
-export default createJumper;
