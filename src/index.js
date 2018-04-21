@@ -1,5 +1,6 @@
 import { renderer } from './three';
 import Game from './Game';
+
 const root = document.getElementById('root');
 root.appendChild(renderer.domElement);
 

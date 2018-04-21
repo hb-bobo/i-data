@@ -54,14 +54,20 @@ ObjectLoader parse .json
 DirectionalLigh + AmbientLight
 ```
 
-8. 游戏逻辑(step-3)
 
-9. 阴影
+
+8. 阴影
 renderer.shadowMap.enabled = true;
 airectionalLight.castShadow = true;
 cube.castShadow = true;
 
-
+8. 游戏逻辑(step-3)
+1 缩小身体
+2 跳跃， 方块创建方向 = 跳跃方向， 跳跃动画
+3 检测是否跳到方块上
+4 倒地方向（还未解决）
+5 移动相机，移动灯光（未做）
+6 删除不可见的方块（未做）
 
 
 

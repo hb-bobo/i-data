@@ -1,6 +1,6 @@
 import { PlaneBufferGeometry, Mesh, MeshPhongMaterial, Math } from 'three';
 
-var planeGeo = new PlaneBufferGeometry( window.innerWidth * 2,window.innerHeight * 2 );
+var planeGeo = new PlaneBufferGeometry( window.innerWidth * 4,window.innerHeight * 4 );
 var floor = new Mesh( planeGeo, new MeshPhongMaterial( { color: 0xCCCCCC } ) );
 
 floor.rotation.x = -90 * Math.DEG2RAD;

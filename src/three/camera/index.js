@@ -2,11 +2,12 @@ import { PerspectiveCamera, OrthographicCamera } from 'three';
 // import {Tween} from 'es6-tween';
 
 // var camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 4000)
+var n = isMobile ? 18 : 30;
 var camera = new OrthographicCamera(
-    window.innerWidth / -30,
-    window.innerWidth / 30,
-    window.innerHeight / 30,
-    window.innerHeight / -30,
+    window.innerWidth / -n,
+    window.innerWidth / n,
+    window.innerHeight / n,
+    window.innerHeight / -n,
     0.1, 4000
 );
 
