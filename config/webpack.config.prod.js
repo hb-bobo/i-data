@@ -9,7 +9,7 @@ const paths = require('./paths');
 const webpackDevConfig = merge(webpackBaseConfig('minimize'), {
   devtool: '#source-map',
   output: {
-    publicPath: '/',
+    publicPath: './',
     filename: 'js/[name].[chunkhash].js', // [chunkhash]
     chunkFilename: 'js/[name].[chunkhash].js' // [chunkhash]
   },
