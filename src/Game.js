@@ -68,7 +68,7 @@ export default class Game {
     }
 
     addEvent() {
-        const canvas = document.querySelector('canvas')
+        // const canvas = document.querySelector('canvas')
         const mouseEvents = isMobile ?
             {
                 down: 'touchstart',
@@ -80,13 +80,13 @@ export default class Game {
                 up: 'mouseup',
             };
 
-        canvas.addEventListener(mouseEvents.down, (e) => {
+        document.documentElement.addEventListener(mouseEvents.down, (e) => {
             e.stopPropagation();
             e.preventDefault();
             this.handleMousedown()
         }, false);
         // 监听鼠标松开的事件
-        canvas.addEventListener(mouseEvents.up, (e) => {
+        document.documentElement.addEventListener(mouseEvents.up, (e) => {
             e.stopPropagation();
             e.preventDefault();
             this.handleMouseup()
@@ -168,6 +168,7 @@ export default class Game {
         const disN = jumpP[direction] - cubeNextP[direction];
 
         // 如果大小不一样则需要两个值（目前一个就可以）
+        // 如果有圆柱体则取radiusBottom
         const nextTargetDis = cubeNext.geometry.parameters.width / 2; // 当前方块的宽的一半
         const currentTargetDis = cubeNext.geometry.parameters.width / 2; // 下一个方块的宽的一半
         const jumpBodyRadiusBottom = this.jumperBody.geometry.parameters.radiusBottom; // jumper的地部半径
